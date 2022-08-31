@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest, ARM64
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: build wheels
+        run: build.sh
+      
+      - name: publish wheels
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/*.whl
