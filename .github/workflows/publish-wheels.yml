@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest, ARM64
+    runs-on: [ubuntu-latest, ARM64, self-hosted]
 
     steps:
       - uses: actions/checkout@v3
